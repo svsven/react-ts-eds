@@ -11,6 +11,9 @@ importers:
       '@equinor/eds-core-react':
         specifier: ^0.49.0
         version: 0.49.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+      '@equinor/eds-icons':
+        specifier: ^0.22.0
+        version: 0.22.0
       react:
         specifier: ^19.1.1
         version: 19.2.0
