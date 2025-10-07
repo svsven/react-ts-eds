@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styled from "styled-components";
+import { Typography, Button, Card, Icon } from "@equinor/eds-core-react";
+import { external_link } from "@equinor/eds-icons";
+
+const Wrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Container = styled.main`
+  max-width: 1024px;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Wrapper>
+      <Container>
+        <Card>
+          <Card.Header>
+            <Card.HeaderTitle>
+              <Typography variant="h1">React & EDS template</Typography>
+            </Card.HeaderTitle>
+          </Card.Header>
+          <Card.Content>
+            <Typography variant="body_short">
+              This is a minimal starter template using Vite, React, TypeScript, and the
+              Equinor Design System (EDS).
+            </Typography>
+          </Card.Content>
+          <Card.Actions>
+            <Button href="https://react.dev/">
+              React documentation
+              <Icon data={external_link} />
+            </Button>
+            <Button href="https://eds.equinor.com">
+              EDS documentation
+              <Icon data={external_link} />
+            </Button>
+          </Card.Actions>
+        </Card>
+      </Container>
+    </Wrapper>
+  );
 }
 
-export default App
+export default App;
